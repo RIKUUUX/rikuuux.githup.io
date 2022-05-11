@@ -1,3 +1,7 @@
-header{
-  color="red"
+#balle{
+  color:red;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 50%;
 }
