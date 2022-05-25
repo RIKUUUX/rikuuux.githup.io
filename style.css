@@ -34,14 +34,46 @@ background: #FF69B4;
 }
 #score1{
   position:absolute;
-  left:10px;
-
+  top:50%;
+  left:-300px;
+  color:#FF1493;
+  font-size:100px;
 
 }
 #score2{
   position:absolute;
-  right:10px;
-  
+  top:50%;
+  right:-300px;
+  color:#FF00FF;
+  font-size:100px;
+}
+
+#Recommencer{
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+}
+
+#bravo1{
+  position:absolute;
+  font-size:100px;
+  color:#FF1493;
+  left:0;
+  right:0;
+  margin:auto;
+  top:50%;
 
 }
+
+#bravo2{
+  position:absolute;
+  font-size:100px;
+  color:#FF00FF;
+  left:0;
+  right:0;
+  margin:auto;
+  top:50%;
+}
+
 

@@ -18,15 +18,33 @@ document.getElementById("balle").style.top=y+"px"
 if (x + dx > largeur-diametre){
 	dx = -dx;
 	scoreJ1+=1
+	document.getElementById("score1").innerHTML = scoreJ1
+	
+
+	if (scoreJ1 == 2){
+		victoire(1)
+
+		
+
+	}
+
 }
 
 if( x + dx < 0){
 
 	dx = -dx;
 	scoreJ2+=1
+	document.getElementById("score2").innerHTML = scoreJ2
+
+	
+
+
+	if (scoreJ2 == 2){
+		victoire(2)
+	}
+
+
 }
-
-
 
 
 if (x + dx < epaisseur){
@@ -63,6 +81,9 @@ if(y + dy > hauteur-diametre || y + dy < 0) {
         dy = -dy;
 }
  
+x += dx;
+y += dy;
+
 
 
 }
@@ -99,7 +120,23 @@ function touchePressee(e){
 }
 document.addEventListener('keydown',touchePressee);
 
+function victoire(J){
+	if (J==1){
+		document.getElementById("bravo1").hidden=false;
 
+	}
+
+
+	if (J==2){
+		document.getElementById("bravo2").hidden=false;
+
+	}
+
+	clearInterval(interval)
+	document.getElementById("Recommencer").hidden=false
+
+
+}
 
 function init(){
 	document.getElementById("racket1").style.top=(hauteur-document.getElementById("racket1").clientHeight)/2+"px"
@@ -107,14 +144,20 @@ function init(){
 	y=(hauteur-document.getElementById("balle").clientHeight)/2
 	x=(largeur-document.getElementById("balle").clientWidth)/2
 	dx=5
-	dy=Math.random()-0.
+	dy=Math.random()-1.
+
 	scoreJ1 = 0
 	scoreJ2 = 0
 	document.getElementById("score1").innerHTML = scoreJ1
 	document.getElementById("score2").innerHTML = scoreJ2
 
+	document.getElementById("bravo1").hidden=true
+	document.getElementById("bravo2").hidden=true
+	document.getElementById("Recommencer").hidden=true
 
-	setInterval(deplacement,1)
+
+
+	interval=setInterval(deplacement,10)
 
 	
 }
