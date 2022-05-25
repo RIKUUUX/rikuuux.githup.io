@@ -49,10 +49,17 @@ background: #FF69B4;
 }
 
 #Recommencer{
+
+  width: 100px;
+  height: 100px;
+  color:pink;
+  background-color:skyblue;
   position:absolute;
-  left:0;
-  right:0;
   margin:auto;
+  top:150%;
+  left:40%;
+  border-radius: 50px;
+
 }
 
 #bravo1{
@@ -61,7 +68,7 @@ background: #FF69B4;
   color:#FF1493;
   left:0;
   right:0;
-  margin:auto;
+  text-align:center;
   top:50%;
 
 }
@@ -71,9 +78,11 @@ background: #FF69B4;
   font-size:100px;
   color:#FF00FF;
   left:0;
-  right:0;
+  right:0;  
+  text-align:center;
+
   margin:auto;
-  top:50%;
+  top:40%;
 }
 
 

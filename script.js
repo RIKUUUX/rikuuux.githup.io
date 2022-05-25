@@ -119,6 +119,8 @@ function touchePressee(e){
 		deplacement_racket2(pas)
 }
 document.addEventListener('keydown',touchePressee);
+document.getElementById("Recommencer").addEventListener("click", init);
+
 
 function victoire(J){
 	if (J==1){
@@ -137,6 +139,8 @@ function victoire(J){
 
 
 }
+
+
 
 function init(){
 	document.getElementById("racket1").style.top=(hauteur-document.getElementById("racket1").clientHeight)/2+"px"
