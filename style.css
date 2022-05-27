@@ -4,51 +4,79 @@
   height:400px;
   position: relative;
   margin:auto;
+  background-image: url("Fond-terrain.jpeg");
+  background-repeat: no-repeat;
+  background-size:cover;
+
+
+
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 #balle{
 position: absolute;
 left: 350px;
 top: 200px;
-width:20px;
-height:20px;
-border:1px ;
-border-radius: 20px;
-background: #FF69B4;
+background-image: url("1ish.png");
+background-repeat: no-repeat;
+background-size:cover;
+width: 75px;
+height: 75px;
+animation: rotation 1s infinite linear;
 }
 
 #racket1{
     width: 15px;
     height: 100px;
-    background: #FF1493;
+    
     position: absolute;
     left:10px;
+    background-image: url("rackette-gauche.png");
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 #racket2{
     width: 15px;
     height: 100px;
-    background: #FF00FF;
+    
     position: absolute;
     right:10px;
+    background-image: url("rackette-droite.png");
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 #score1{
   position:absolute;
-  top:-25%;
+  top:30px;
   left:10%;
   color:#FF1493;
-  font-size:500px;
+  font-size:300px;
   font-family:Impact, fantasy ;
+  opacity:0.2;
+
+
 
 
 }
 #score2{
   position:absolute;
-  top:-25%;
+  top:30px;
   right:10%;
   color:#FF00FF;
-  font-size:500px;
+  font-size:300px;
   font-family:Impact, fantasy ;
+  opacity:0.2;
+
+
 }
 
 #Recommencer{
@@ -67,22 +95,33 @@ background: #FF69B4;
 
 #bravo1{
   position:absolute;
-  font-size:100px;
-  color:#FF1493;
+  font-size:50px;
+  color:white;
   left:0;
   right:0;
   text-align:center;
-  top:50%;
+  font-family:Impact, fantasy ;
+  background-image: url("victoire.png");
+
+  background-size:100px;
+
+ 
+  margin:auto;
+  top:40%;
 
 }
 
 #bravo2{
   position:absolute;
-  font-size:100px;
-  color:#FF00FF;
+  font-size:50px;
+  color:white;
   left:0;
   right:0;  
   text-align:center;
+  font-family:Impact, fantasy ;
+  background-image: url("victoire.png");
+  
+  background-size:100px;
 
   margin:auto;
   top:40%;

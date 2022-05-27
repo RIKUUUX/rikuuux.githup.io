@@ -22,7 +22,8 @@ if (x + dx > largeur-diametre){
 	
 	dx=0
 	dy=0
-	setTimeout(balleaucentre,1500)
+
+	setTimeout(balleaucentre,750)
 
 
 	document.getElementById("score1").innerHTML = scoreJ1
@@ -44,7 +45,7 @@ if( x + dx < 0){
 	
 	dx=0
 	dy=0
-	setTimeout(balleaucentre,1500)
+	setTimeout(balleaucentre,750)
 
 
 	document.getElementById("score2").innerHTML = scoreJ2
@@ -84,7 +85,7 @@ if (x + dx > largeur-diametre-epaisseur){
 		
 	    dx = -dx;
 
-		//dy = dy*2
+		dy = dy*2
 	}
 }
 
