@@ -18,6 +18,13 @@ document.getElementById("balle").style.top=y+"px"
 if (x + dx > largeur-diametre){
 	dx = -dx;
 	scoreJ1+=1
+
+	
+	dx=0
+	dy=0
+	setTimeout(balleaucentre,1500)
+
+
 	document.getElementById("score1").innerHTML = scoreJ1
 	
 
@@ -33,10 +40,14 @@ if (x + dx > largeur-diametre){
 if( x + dx < 0){
 
 	dx = -dx;
-	scoreJ2+=1
-	document.getElementById("score2").innerHTML = scoreJ2
-
+	scoreJ2+=1		
 	
+	dx=0
+	dy=0
+	setTimeout(balleaucentre,1500)
+
+
+	document.getElementById("score2").innerHTML = scoreJ2
 
 
 	if (scoreJ2 == 2){
@@ -73,7 +84,7 @@ if (x + dx > largeur-diametre-epaisseur){
 		
 	    dx = -dx;
 
-		dy = dy*2
+		//dy = dy*2
 	}
 }
 
@@ -165,6 +176,19 @@ function init(){
 
 	
 }
+
+function balleaucentre() {
+	y=(hauteur-document.getElementById("balle").clientHeight)/2
+	x=(largeur-document.getElementById("balle").clientWidth)/2
+	if (document.getElementById("balle").offsetLeft>x){
+		dx=-5
+	}
+	if (document.getElementById("balle").offsetLeft<x){
+		dx=5
+	}
+	dy=Math.random()-1.
+	
+	}
 
 init();
 
