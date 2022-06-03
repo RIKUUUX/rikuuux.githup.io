@@ -29,8 +29,10 @@ if (x + dx > largeur-diametre){
 	document.getElementById("score1").innerHTML = scoreJ1
 	
 
-	if (scoreJ1 == 500){
+	if (scoreJ1 == 2){
 		victoire(1)
+		document.getElementById("pause").hidden=true
+
 
 		
 
@@ -51,8 +53,10 @@ if( x + dx < 0){
 	document.getElementById("score2").innerHTML = scoreJ2
 
 
-	if (scoreJ2 == 500){
+	if (scoreJ2 == 2){
 		victoire(2)
+		document.getElementById("pause").hidden=true
+
 	}
 
 
@@ -69,7 +73,9 @@ if (x + dx < epaisseur){
 		document.getElementById("racket1").clientHeight){
 		
 		
-	    dx = -dx;
+	    dx = Math.abs(dx);
+
+		couleur1("racket1")
 	}
 }
 
@@ -83,7 +89,9 @@ if (x + dx > largeur-diametre-epaisseur){
 		document.getElementById("racket2").clientHeight){
 		
 		
-	    dx = -dx;
+	    dx = -Math.abs(dx);
+
+		couleur2("racket2")
 
 		dy = dy*2
 	}
@@ -129,7 +137,15 @@ function touchePressee(e){
 		deplacement_racket2(-pas)
 	if (e.key == "ArrowDown")
 		deplacement_racket2(pas)
+	if (e.key == "p")
+		pause()
+
 }
+		
+
+
+
+
 document.addEventListener('keydown',touchePressee);
 document.getElementById("Recommencer").addEventListener("click", init);
 
@@ -171,7 +187,9 @@ function init(){
 	document.getElementById("bravo2").hidden=true
 	document.getElementById("Recommencer").hidden=true
 
+	document.getElementById("pause").hidden=false
 
+	document.getElementById("reprendre").hidden=true
 
 	interval=setInterval(deplacement,10)
 
@@ -192,6 +210,46 @@ function balleaucentre() {
 	}
 	init();
 
+function couleur1(animation){
+	document.getElementById("racket1").classList.add(animation)
+	setTimeout(couleur,1000)
+}
+
+function couleur2(animation){
+	document.getElementById("racket2").classList.add(animation)
+	setTimeout(couleur,1000)
+}
+
+function couleur(){
+document.getElementById("racket1").classList.remove("racket1")
+	document.getElementById("racket2").classList.remove("racket2")
+}
+
+document.addEventListener('Escape',touchePressee);
+document.getElementById("pause").addEventListener("click", pause);
+document.getElementById("reprendre").addEventListener("click", pause);
+
+function pause(){
+
+if 	(document.getElementById("reprendre").hidden== true){
+
+	Vx = dx
+	Vy = dy
+	dx = 0
+	dy = 0
+
+	document.getElementById("reprendre").hidden=false
+	document.getElementById("pause").hidden=true
+
+}
+else{
+	dx=Vx
+	dy=Vy
+
+	document.getElementById("reprendre").hidden=true
+	document.getElementById("pause").hidden=false
+}
+}
 
 
 
