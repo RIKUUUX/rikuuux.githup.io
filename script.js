@@ -29,7 +29,7 @@ if (x + dx > largeur-diametre){
 	document.getElementById("score1").innerHTML = scoreJ1
 	
 
-	if (scoreJ1 == 2){
+	if (scoreJ1 == 500){
 		victoire(1)
 
 		
@@ -45,13 +45,13 @@ if( x + dx < 0){
 	
 	dx=0
 	dy=0
-	setTimeout(balleaucentre,750)
+	setTimeout(balleaucentre,1000)
 
 
 	document.getElementById("score2").innerHTML = scoreJ2
 
 
-	if (scoreJ2 == 2){
+	if (scoreJ2 == 500){
 		victoire(2)
 	}
 
@@ -182,16 +182,15 @@ function balleaucentre() {
 	y=(hauteur-document.getElementById("balle").clientHeight)/2
 	x=(largeur-document.getElementById("balle").clientWidth)/2
 	if (document.getElementById("balle").offsetLeft>x){
-		dx=-5
+		dx=5
 	}
 	if (document.getElementById("balle").offsetLeft<x){
-		dx=5
+		dx=-5
 	}
 	dy=Math.random()-1.
 	
 	}
-
-init();
+	init();
 
 
 

@@ -27,43 +27,43 @@ background-repeat: no-repeat;
 background-size:cover;
 width: 75px;
 height: 75px;
-animation: rotation 1s infinite linear;
+animation: rotation 1s ;
 }
+
+
 
 #racket1{
     width: 15px;
     height: 100px;
-    width: 15px;
-    height: 100px;
-    position: absolute;
-    left:10px;   
-    background-color:red;
+    color: hsl(324, 70%, 45%);
+    animation: red 2s infinite;
+    background-color: currentColor;
+    left:10px;
+    position: absolute;   
+
     
 }
 
 #racket2{
     width: 15px;
     height: 100px;
-    width: 15px;
-    height: 100px; 
-    position: absolute;
+    color: hsl(324, 70%, 45%);
+    animation: blue 2s infinite;
+    background-color: currentColor;
     right:10px;
-    background-color:blue;
+    position: absolute;
+}
 
     
-}
+
 #score1{
   position:absolute;
   top:30px;
   left:10%;
   color:red;
   font-size:300px;
-  font-family:Impact, fantasy ;
+  font-family:Impact, fantasy;
   opacity:0.2;
-
-
-
-
 }
 #score2{
   position:absolute;
@@ -71,10 +71,8 @@ animation: rotation 1s infinite linear;
   right:10%;
   color:blue;
   font-size:300px;
-  font-family:Impact, fantasy ;
+  font-family:Impact, fantasy;
   opacity:0.2;
-
-
 }
 
 #Recommencer{
