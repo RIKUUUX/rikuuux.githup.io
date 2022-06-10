@@ -1,9 +1,14 @@
 x=650;
 y=365;
+
 dx=5;
 dy=5;
+
 var scoreJ1 = 0;
 var scoreJ2 = 0;
+
+pas=25;
+
 
 largeur=document.getElementById("terrain").clientWidth
 hauteur=document.getElementById("terrain").clientHeight
@@ -128,7 +133,6 @@ function deplacement_racket2(u){
 }
 
 function touchePressee(e){
-	pas=25
 	if (e.key == "w")
 		deplacement_racket1(-pas)
 	if (e.key == "s")
@@ -175,11 +179,15 @@ function init(){
 	document.getElementById("racket2").style.top=(hauteur-document.getElementById("racket2").clientHeight)/2+"px"
 	y=(hauteur-document.getElementById("balle").clientHeight)/2
 	x=(largeur-document.getElementById("balle").clientWidth)/2
-	dx=5
+	dx=0
 	dy=Math.random()-1.
 
 	scoreJ1 = 0
 	scoreJ2 = 0
+
+	document.getElementById("balle").hidden=true
+
+
 	document.getElementById("score1").innerHTML = scoreJ1
 	document.getElementById("score2").innerHTML = scoreJ2
 
@@ -190,11 +198,26 @@ function init(){
 	document.getElementById("pause").hidden=false
 
 	document.getElementById("reprendre").hidden=true
+	
+	document.getElementById("humain").hidden=true
 
 	interval=setInterval(deplacement,10)
 
 	
 }
+
+function commencer(){
+
+	document.getElementById("balle").hidden=false
+	dx=5
+
+
+}
+
+
+
+
+
 
 function balleaucentre() {
 	y=(hauteur-document.getElementById("balle").clientHeight)/2
@@ -238,6 +261,9 @@ if 	(document.getElementById("reprendre").hidden== true){
 	dx = 0
 	dy = 0
 
+	pas=0
+
+
 	document.getElementById("reprendre").hidden=false
 	document.getElementById("pause").hidden=true
 
@@ -245,11 +271,22 @@ if 	(document.getElementById("reprendre").hidden== true){
 else{
 	dx=Vx
 	dy=Vy
-
+	pas=25
 	document.getElementById("reprendre").hidden=true
 	document.getElementById("pause").hidden=false
 }
 }
+
+
+
+document.getElementById("humain").addEventListener("click", );
+document.getElementById("PC").addEventListener("click", );
+
+
+
+
+
+
 
 
 
